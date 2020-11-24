@@ -26,18 +26,18 @@
             <div class="svg-funnel-js__label" :class="`label-${(index+1)}`"
                  v-for="(value, index) in valuesFormatted" :key="getRandom() + labels[index].toLowerCase().split(' ').join('-')"
             >
-                <div v-if="value.includes('RM')" class="label__value" style="font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525; margin-left:8px;">{{ value }}</div>
-                <div v-else class="label__value" style="font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: #{(-30/1000)}em; color: #2B2525; margin:0px;">{{ value }}</div>
-                <div class="label__title" v-if="labels && labels[index].toString().includes('⬇')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#CD3300; margin-top:-4px">
+                <div v-if="value.includes('RM')" class="label__value" style="font-size: 12px !important; font-weight: 600; line-height: 16px !important; letter-spacing: #{(-40/1000)}em; color: #333333; margin-left:8px;">{{ value }}</div>
+                <div v-else class="label__value" style="font-size: 18px !important; font-weight: 700; line-height: 24px !important; letter-spacing: #{(-30/1000)}em; color: #333333; margin:0px;">{{ value }}</div>
+                <div class="label__title" v-if="labels && labels[index].toString().includes('⬇')" style="font-size: 12px !important; font-weight: 400; line-height: 16px !important; letter-spacing: #{(-40/1000)}em; color:#CD3300; margin-top:-4px">
                   <i class="mdi mdi-arrow-down" style="position: relative; top: 0px; font-size: 15px; top: 1px;"></i>
                   <span> {{ labels[index].replace('⬇','') }} </span>
                 </div>
-                <div class="label__title" v-else-if="labels && labels[index].toString().includes('⬆')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#009966; margin-top:-4px">
+                <div class="label__title" v-else-if="labels && labels[index].toString().includes('⬆')" style="font-size: 12px !important; font-weight: 400; line-height: 16px !important; letter-spacing: #{(-40/1000)}em; color:#009966; margin-top:-4px">
                   <i class="mdi mdi-arrow-up" style="position: relative; top: 0px; font-size: 15px; top: 1px;"></i>
                   <span> {{ labels[index].replace('⬆','') }} </span>
                 </div>
-                <div class="label__title" v-else-if="labels" style="font-size: 13px; font-weight: 600; line-height: 24px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">{{ labels[index] }}</div>
-                <div class="label__percentage" v-if="displayPercentage && percentages()[index] !== 100" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525; margin-bottom:8px">
+                <div class="label__title" v-else-if="labels" style="font-size: 13px !important; font-weight: 600; line-height: 24px !important; letter-spacing: #{(-40/1000)}em; color: #333333;">{{ labels[index] }}</div>
+                <div class="label__percentage" v-if="displayPercentage && percentages()[index] !== 100" style="font-size: 12px !important; font-weight: 400; line-height: 16px !important; letter-spacing: #{(-40/1000)}em; color: #848484; margin-bottom:8px">
                     <span v-if="index != 0"> {{ percentages()[index] }}% from {{ labels[index - 1] }} </span>
                     <span v-else> {{ percentages()[index] }}% </span>
                 </div>
@@ -281,25 +281,6 @@
 </script>
 
 <style scoped lang="scss">
-
-  .h6,
-  h6 {
-    font-size: 18px!important;
-    font-style: normal;
-    font-weight: 700 !important;
-    line-height: 24px !important;
-    letter-spacing: #{(-30/1000)}em !important;
-    color: #2B2525;
-  }
-
-  .s2 {
-    font-size: 13px !important;
-    font-style: normal;
-    font-weight: 600 !important;
-    line-height: 24px !important;
-    letter-spacing: #{(-40/1000)}em !important;
-    color: #2B2525;
-  }
 
   .appear-enter-active, .appear-leave-active {
       transition: all .7s ease-in-out;

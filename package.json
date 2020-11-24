@@ -1,6 +1,6 @@
 {
   "name": "vue-funnel-graph-js",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "",
   "main": "dist/vue-funnel-graph.umd.js",
   "module": "dist/vue-funnel-graph.esm.js",
