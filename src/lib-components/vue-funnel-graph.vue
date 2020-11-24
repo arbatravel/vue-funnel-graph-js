@@ -26,14 +26,14 @@
             <div class="svg-funnel-js__label" :class="`label-${(index+1)}`"
                  v-for="(value, index) in valuesFormatted" :key="getRandom() + labels[index].toLowerCase().split(' ').join('-')"
             >
-                <div v-if="value.includes('RM')" class="label__value" style="font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">{{ value }}</div>
+                <div v-if="value.includes('RM')" class="label__value" style="font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525; margin-left:8px;">{{ value }}</div>
                 <div v-else class="label__value" style="font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: #{(-30/1000)}em; color: #2B2525; margin:0px;">{{ value }}</div>
-                <div class="label__title" v-if="labels && labels[index].toString().includes('⬇')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#DD2C00; margin-top:-4px">
-                  <i class="mdi mdi-arrow-down mdi-18px" style="position: relative; top: 2px;"></i>
+                <div class="label__title" v-if="labels && labels[index].toString().includes('⬇')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#CD3300; margin-top:-4px">
+                  <i class="mdi mdi-arrow-down" style="position: relative; top: 0px; font-size: 15px; top: 1px;"></i>
                   <span> {{ labels[index].replace('⬇','') }} </span>
                 </div>
-                <div class="label__title" v-else-if="labels && labels[index].toString().includes('⬆')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#43A047; margin-top:-4px">
-                  <i class="mdi mdi-arrow-up mdi-18px" style="position: relative; top: 2px;"></i>
+                <div class="label__title" v-else-if="labels && labels[index].toString().includes('⬆')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#009966; margin-top:-4px">
+                  <i class="mdi mdi-arrow-up" style="position: relative; top: 0px; font-size: 15px; top: 1px;"></i>
                   <span> {{ labels[index].replace('⬆','') }} </span>
                 </div>
                 <div class="label__title" v-else-if="labels" style="font-size: 13px; font-weight: 600; line-height: 24px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">{{ labels[index] }}</div>
