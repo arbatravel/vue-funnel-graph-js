@@ -26,18 +26,20 @@
             <div class="svg-funnel-js__label" :class="`label-${(index+1)}`"
                  v-for="(value, index) in valuesFormatted" :key="getRandom() + labels[index].toLowerCase().split(' ').join('-')"
             >
-                <div class="label__value" style="color:black;">{{ value }}</div>
-                <div class="label__title" v-if="labels && labels[index].toString().includes('⬇')" style="color:#DD2C00; margin-top:-4px">
+                <div v-if="value.includes('RM')" class="label__value" style="font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">{{ value }}</div>
+                <div v-else class="label__value" style="font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: #{(-30/1000)}em; color: #2B2525; margin:0px;">{{ value }}</div>
+                <div class="label__title" v-if="labels && labels[index].toString().includes('⬇')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#DD2C00; margin-top:-4px">
                   <i class="mdi mdi-arrow-down mdi-18px" style="position: relative; top: 2px;"></i>
                   <span> {{ labels[index].replace('⬇','') }} </span>
                 </div>
-                <div class="label__title" v-else-if="labels && labels[index].toString().includes('⬆')" style="color:#43A047; margin-top:-4px">
+                <div class="label__title" v-else-if="labels && labels[index].toString().includes('⬆')" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color:#43A047; margin-top:-4px">
                   <i class="mdi mdi-arrow-up mdi-18px" style="position: relative; top: 2px;"></i>
                   <span> {{ labels[index].replace('⬆','') }} </span>
                 </div>
-                <div class="label__title" v-else-if="labels" style="color:#8F9BB3;">{{ labels[index] }}</div>
-                <div class="label__percentage" v-if="displayPercentage && percentages()[index] !== 100" style="color:#333333;">
-                    {{ percentages()[index] }}%
+                <div class="label__title" v-else-if="labels" style="font-size: 13px; font-weight: 600; line-height: 24px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">{{ labels[index] }}</div>
+                <div class="label__percentage" v-if="displayPercentage && percentages()[index] !== 100" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">
+                    <span v-if="index != 0"> {{ percentages()[index] }}% from {{ labels[index - 1] }} </span>
+                    <span v-else> {{ percentages()[index] }}% </span>
                 </div>
                 <div class="label__segment-percentages" v-if="is2d()">
                     <ul class="segment-percentage__list">
@@ -279,31 +281,51 @@
 </script>
 
 <style scoped lang="scss">
-    .appear-enter-active, .appear-leave-active {
-        transition: all .7s ease-in-out;
-    }
 
-    .appear-enter-to, .appear-leave {
-        max-width: 100%;
-        max-height: 100%;
-        opacity: 1;
-    }
+  .h6,
+  h6 {
+    font-size: 18px!important;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    letter-spacing: #{(-30/1000)}em !important;
+    color: #2B2525;
+  }
 
-    .appear-enter, .appear-leave-to {
-        max-width: 0;
-        max-height: 0;
-        opacity: 0;
-    }
+  .s2 {
+    font-size: 13px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: #{(-40/1000)}em !important;
+    color: #2B2525;
+  }
 
-    .fade-enter-active, .fade-leave-active {
-        transition: all .3s ease;
-    }
+  .appear-enter-active, .appear-leave-active {
+      transition: all .7s ease-in-out;
+  }
 
-    .fade-enter-to, .fade-leave {
-        opacity: 1;
-    }
+  .appear-enter-to, .appear-leave {
+      max-width: 100%;
+      max-height: 100%;
+      opacity: 1;
+  }
 
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
-    }
+  .appear-enter, .appear-leave-to {
+      max-width: 0;
+      max-height: 0;
+      opacity: 0;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+      transition: all .3s ease;
+  }
+
+  .fade-enter-to, .fade-leave {
+      opacity: 1;
+  }
+
+  .fade-enter, .fade-leave-to {
+      opacity: 0;
+  }
 </style>
