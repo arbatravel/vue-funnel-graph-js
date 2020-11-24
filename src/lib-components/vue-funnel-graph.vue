@@ -37,7 +37,7 @@
                   <span> {{ labels[index].replace('⬆','') }} </span>
                 </div>
                 <div class="label__title" v-else-if="labels" style="font-size: 13px; font-weight: 600; line-height: 24px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">{{ labels[index] }}</div>
-                <div class="label__percentage" v-if="displayPercentage && percentages()[index] !== 100" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525;">
+                <div class="label__percentage" v-if="displayPercentage && percentages()[index] !== 100" style="font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: #{(-40/1000)}em; color: #2B2525; margin-bottom:8px">
                     <span v-if="index != 0"> {{ percentages()[index] }}% from {{ labels[index - 1] }} </span>
                     <span v-else> {{ percentages()[index] }}% </span>
                 </div>
