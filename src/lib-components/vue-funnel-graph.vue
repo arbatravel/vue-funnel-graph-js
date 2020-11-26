@@ -38,7 +38,7 @@
                 </div>
                 <div class="label__title" v-else-if="labels" style="font-size: 13px !important; font-weight: 600; line-height: 24px !important; letter-spacing: #{(-40/1000)}em; color: #333333;">{{ labels[index] }}</div>
                 <div class="label__percentage" v-if="displayPercentage && percentages()[index] !== 100" style="font-size: 12px !important; font-weight: 400; line-height: 16px !important; letter-spacing: #{(-40/1000)}em; color: #848484; margin-bottom:8px">
-                    <span v-if="index != 0"> {{ percentages()[index] }}% from {{ labels[index - 1] }} </span>
+                    <span v-if="index != 0"> {{ getPercentage(index) }}% from {{ labels[index - 1] }} </span>
                     <span v-else> {{ percentages()[index] }}% </span>
                 </div>
                 <div class="label__segment-percentages" v-if="is2d()">
@@ -169,6 +169,9 @@
             },
             is2d() {
                 return this.graph.is2d();
+            },
+            getPercentage (index) {
+              return parseInt((this.valuesFormatted[index]/this.valuesFormatted[index - 1]) * 100);
             },
             percentages() {
                 return this.graph.createPercentages();
