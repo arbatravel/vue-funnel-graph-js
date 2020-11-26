@@ -114,6 +114,9 @@
                 return this.graph.is2d();
             },
             getPercentage: function getPercentage (index) {
+              if (!this.valuesFormatted[index] || this.valuesFormatted[index - 1]) {
+                return 0
+              }
               return parseInt((this.valuesFormatted[index]/this.valuesFormatted[index - 1]) * 100);
             },
             percentages: function percentages() {
@@ -374,11 +377,11 @@
       /* style */
       var __vue_inject_styles__ = function (inject) {
         if (!inject) { return }
-        inject("data-v-572636a2_0", { source: ".appear-enter-active[data-v-572636a2],.appear-leave-active[data-v-572636a2]{transition:all .7s ease-in-out}.appear-enter-to[data-v-572636a2],.appear-leave[data-v-572636a2]{max-width:100%;max-height:100%;opacity:1}.appear-enter[data-v-572636a2],.appear-leave-to[data-v-572636a2]{max-width:0;max-height:0;opacity:0}.fade-enter-active[data-v-572636a2],.fade-leave-active[data-v-572636a2]{transition:all .3s ease}.fade-enter-to[data-v-572636a2],.fade-leave[data-v-572636a2]{opacity:1}.fade-enter[data-v-572636a2],.fade-leave-to[data-v-572636a2]{opacity:0}", map: undefined, media: undefined });
+        inject("data-v-7431ee9c_0", { source: ".appear-enter-active[data-v-7431ee9c],.appear-leave-active[data-v-7431ee9c]{transition:all .7s ease-in-out}.appear-enter-to[data-v-7431ee9c],.appear-leave[data-v-7431ee9c]{max-width:100%;max-height:100%;opacity:1}.appear-enter[data-v-7431ee9c],.appear-leave-to[data-v-7431ee9c]{max-width:0;max-height:0;opacity:0}.fade-enter-active[data-v-7431ee9c],.fade-leave-active[data-v-7431ee9c]{transition:all .3s ease}.fade-enter-to[data-v-7431ee9c],.fade-leave[data-v-7431ee9c]{opacity:1}.fade-enter[data-v-7431ee9c],.fade-leave-to[data-v-7431ee9c]{opacity:0}", map: undefined, media: undefined });
 
       };
       /* scoped */
-      var __vue_scope_id__ = "data-v-572636a2";
+      var __vue_scope_id__ = "data-v-7431ee9c";
       /* module identifier */
       var __vue_module_identifier__ = undefined;
       /* functional template */

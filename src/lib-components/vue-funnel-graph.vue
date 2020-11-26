@@ -171,6 +171,9 @@
                 return this.graph.is2d();
             },
             getPercentage (index) {
+              if (!this.valuesFormatted[index] || this.valuesFormatted[index - 1]) {
+                return 0
+              }
               return parseInt((this.valuesFormatted[index]/this.valuesFormatted[index - 1]) * 100);
             },
             percentages() {
