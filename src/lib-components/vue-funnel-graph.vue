@@ -171,10 +171,11 @@
                 return this.graph.is2d();
             },
             getPercentage (index) {
-              if (!this.valuesFormatted[index] || this.valuesFormatted[index - 1]) {
-                return 0
+              const value = parseInt((this.valuesFormatted[index]/this.valuesFormatted[index - 1]) * 100)
+              if (value) {
+                return value;
               }
-              return parseInt((this.valuesFormatted[index]/this.valuesFormatted[index - 1]) * 100);
+              return 0
             },
             percentages() {
                 return this.graph.createPercentages();

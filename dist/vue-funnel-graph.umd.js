@@ -114,10 +114,11 @@
                 return this.graph.is2d();
             },
             getPercentage: function getPercentage (index) {
-              if (!this.valuesFormatted[index] || this.valuesFormatted[index - 1]) {
-                return 0
+              var value = parseInt((this.valuesFormatted[index]/this.valuesFormatted[index - 1]) * 100);
+              if (value) {
+                return value;
               }
-              return parseInt((this.valuesFormatted[index]/this.valuesFormatted[index - 1]) * 100);
+              return 0
             },
             percentages: function percentages() {
                 return this.graph.createPercentages();
@@ -377,11 +378,11 @@
       /* style */
       var __vue_inject_styles__ = function (inject) {
         if (!inject) { return }
-        inject("data-v-7431ee9c_0", { source: ".appear-enter-active[data-v-7431ee9c],.appear-leave-active[data-v-7431ee9c]{transition:all .7s ease-in-out}.appear-enter-to[data-v-7431ee9c],.appear-leave[data-v-7431ee9c]{max-width:100%;max-height:100%;opacity:1}.appear-enter[data-v-7431ee9c],.appear-leave-to[data-v-7431ee9c]{max-width:0;max-height:0;opacity:0}.fade-enter-active[data-v-7431ee9c],.fade-leave-active[data-v-7431ee9c]{transition:all .3s ease}.fade-enter-to[data-v-7431ee9c],.fade-leave[data-v-7431ee9c]{opacity:1}.fade-enter[data-v-7431ee9c],.fade-leave-to[data-v-7431ee9c]{opacity:0}", map: undefined, media: undefined });
+        inject("data-v-e6578cbc_0", { source: ".appear-enter-active[data-v-e6578cbc],.appear-leave-active[data-v-e6578cbc]{transition:all .7s ease-in-out}.appear-enter-to[data-v-e6578cbc],.appear-leave[data-v-e6578cbc]{max-width:100%;max-height:100%;opacity:1}.appear-enter[data-v-e6578cbc],.appear-leave-to[data-v-e6578cbc]{max-width:0;max-height:0;opacity:0}.fade-enter-active[data-v-e6578cbc],.fade-leave-active[data-v-e6578cbc]{transition:all .3s ease}.fade-enter-to[data-v-e6578cbc],.fade-leave[data-v-e6578cbc]{opacity:1}.fade-enter[data-v-e6578cbc],.fade-leave-to[data-v-e6578cbc]{opacity:0}", map: undefined, media: undefined });
 
       };
       /* scoped */
-      var __vue_scope_id__ = "data-v-7431ee9c";
+      var __vue_scope_id__ = "data-v-e6578cbc";
       /* module identifier */
       var __vue_module_identifier__ = undefined;
       /* functional template */
